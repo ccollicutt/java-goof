@@ -17,6 +17,7 @@ steps:
   displayName: Build App
 
 - script: |
+    cd /Users/stephen/Documents/java-goof
     snyk monitor
   displayName: 'Snyk Open Source'
 
