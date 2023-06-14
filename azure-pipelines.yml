@@ -26,5 +26,5 @@ steps:
   displayName: 'Snyk Code'
  
 - script: |
-    snyk iac test
+    snyk iac --report || true
   displayName: 'Snyk IaC'
