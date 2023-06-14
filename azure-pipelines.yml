@@ -18,7 +18,7 @@ steps:
 
 - script: |
     cd /Users/stephen/Documents/java-goof
-    snyk monitor
+    snyk monitor --all-projects
   displayName: 'Snyk Open Source'
 
 - script: |
