@@ -10,14 +10,11 @@ pool:
   name: Default
 
 steps:
-- task: JavaToolInstaller@0
-  inputs:
-    versionSpec: '11'
-    jdkArchitectureOption: 'x64'
-    jdkSourceOption: 'PreInstalled'
 
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+- script: |
+    export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-11.jdk/Contents/Home"
+    mvn install
+  displayName: Build App
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
