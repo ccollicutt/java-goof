@@ -17,6 +17,13 @@ steps:
   displayName: Build App
 
 - script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+    snyk monitor
+  displayName: 'Snyk Open Source'
+
+- script: |
+    snyk code test
+  displayName: 'Snyk Code'
+ 
+- script: |
+    snyk iac test
+  displayName: 'Snyk IaC'
