@@ -23,7 +23,7 @@ steps:
 
 - script: |
     cd /Users/stephen/Documents/java-goof
-    snyk code test --json | snyk-to-html -o results-code.html
+    snyk code test --json | snyk-to-html -o /Users/stephen/Documents/java-goof/results-code.html
   displayName: 'Snyk Code'
  
 - script: |
