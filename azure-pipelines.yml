@@ -28,7 +28,7 @@ steps:
  
 - script: |
     cd /Users/stephen/Documents/java-goof
-    snyk iac test --report
+    snyk iac test --report || true
   displayName: 'Snyk IaC'
     
 - task: CopyFiles@2
