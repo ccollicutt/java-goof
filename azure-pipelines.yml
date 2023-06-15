@@ -22,9 +22,11 @@ steps:
   displayName: 'Snyk Open Source'
 
 - script: |
-    snyk code test | true
+    cd /Users/stephen/Documents/java-goof
+    snyk code test --json | snyk-to-html -o results-code.html
   displayName: 'Snyk Code'
  
 - script: |
-    snyk iac --report || true
+    cd /Users/stephen/Documents/java-goof
+    snyk iac test --report --remote-repo-url=stephen-snyk/java-goof
   displayName: 'Snyk IaC'
