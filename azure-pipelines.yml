@@ -28,5 +28,15 @@ steps:
  
 - script: |
     cd /Users/stephen/Documents/java-goof
-    snyk iac test --report --remote-repo-url=stephen-snyk/java-goof
+    snyk iac test --report
   displayName: 'Snyk IaC'
+    
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: '$(Build.SourcesDirectory)'
+    Contents: 'results-code.html'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+
+
+- publish: $(System.DefaultWorkingDirectory)/results-code.html
+  artifact: results-code.html
