@@ -33,9 +33,9 @@ steps:
     
 - task: CopyFiles@2
   inputs:
-    SourceFolder: /Users/stephen/Documents/java-goof
+    SourceFolder: '$(Agent.BuildDirectory)'
     Contents: 'results-code.html'
-    TargetFolder: /Users/stephen/Documents/java-goof
+    TargetFolder: '$(Agent.BuildDirectory)'
 
 
 - publish: $(System.DefaultWorkingDirectory)/results-code.html
