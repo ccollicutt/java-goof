@@ -33,7 +33,7 @@ steps:
   
 - script: |
     cd /Users/stephen/Documents/java-goof
-    snyk container test --file=/Users/stephen/Documents/java-goof/todolist-goof/Dockerfile || true
+    snyk container monitor freshdemo/todolist-goof:latest --file=/Users/stephen/Documents/java-goof/todolist-goof/Dockerfile || true
   displayName: 'Snyk Container'
     
 - task: CopyFiles@2
