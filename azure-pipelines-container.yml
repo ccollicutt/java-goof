@@ -28,5 +28,13 @@ stages:
       inputs:
         command: build
         dockerfile: '$(Build.SourcesDirectory)/todolist-goof/Dockerfile'
-        tags: |
-          $(tag)
+        tags: freshdemo/java-goof:latest
+    - task: Docker@2
+      displayName: Push image
+      inputs:
+        containerRegistry: |
+          $(dockerHub)
+        repository: freshdemo/java-goof
+        command: push
+        tags: latest
+          
