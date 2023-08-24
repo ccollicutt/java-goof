@@ -33,7 +33,7 @@ stages:
       displayName: Push image
       inputs:
         containerRegistry: |
-          $(dockerHub)
+          $(DockerHub)
         repository: freshdemo/java-goof
         command: push
         tags: latest
