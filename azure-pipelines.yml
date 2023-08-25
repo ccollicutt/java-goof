@@ -16,28 +16,28 @@ steps:
     mvn install
   displayName: Build App
 
-- script: |
-    cd /Users/stephen/Documents/java-goof
-    snyk monitor --org=todolist --all-projects
-  displayName: 'Snyk Open Source'
+#- script: |
+#    cd /Users/stephen/Documents/java-goof
+#    snyk monitor --org=todolist --all-projects
+#  displayName: 'Snyk Open Source'
 
-- script: |
-    cd /Users/stephen/Documents/java-goof
-    snyk code test --org=todolist --json | snyk-to-html -o /Users/stephen/Documents/java-goof/results-code.html
-  displayName: 'Snyk Code'
+#- script: |
+#    cd /Users/stephen/Documents/java-goof
+#    snyk code test --org=todolist --json | snyk-to-html -o /Users/stephen/Documents/java-goof/results-code.html
+#  displayName: 'Snyk Code'
  
-- script: |
-    cd /Users/stephen/Documents/java-goof
-    snyk iac test --org=todolist --report || true
-  displayName: 'Snyk IaC'
+#- script: |
+#    cd /Users/stephen/Documents/java-goof
+#    snyk iac test --org=todolist --report || true
+#  displayName: 'Snyk IaC'
   
-- script: |
-    cd /Users/stephen/Documents/java-goof
-    snyk container monitor freshdemo/todolist-goof:latest --file=/Users/stephen/Documents/java-goof/todolist-goof/Dockerfile || true
-  displayName: 'Snyk Container'
+#- script: |
+#    cd /Users/stephen/Documents/java-goof
+#    snyk container monitor freshdemo/todolist-goof:latest --file=/Users/stephen/Documents/java-goof/todolist-goof/Dockerfile || true
+#  displayName: 'Snyk Container'
     
 - script: |
-     cd /Users/stephen/Documents/java-goof
+     cd /Users/stephen/Documents/java-goof/todolist-goof
      docker build -f ./todolist-goof/Dockerfile -t northamerica-northeast2-docker.pkg.dev/snyk-cx-se-demo/sperciballi-registry/java-goof:latest .
   displayName: 'Build Image'
 
