@@ -37,7 +37,7 @@ steps:
   displayName: 'Snyk Container'
     
 - script: |
-     docker build -f /Users/stephen/Documents/java-goof/todolist-goof Dockerfile -t northamerica-northeast2-docker.pkg.dev/snyk-cx-se-demo/sperciballi-registry/java-goof:latest
+     docker build -f /Users/stephen/Documents/java-goof/todolist-goof/Dockerfile -t northamerica-northeast2-docker.pkg.dev/snyk-cx-se-demo/sperciballi-registry/java-goof:latest
   displayName: 'Build Image'
 
 - script: 
