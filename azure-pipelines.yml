@@ -36,6 +36,14 @@ steps:
     snyk container monitor freshdemo/todolist-goof:latest --file=/Users/stephen/Documents/java-goof/todolist-goof/Dockerfile || true
   displayName: 'Snyk Container'
     
+- script: |
+     docker build -f /Users/stephen/Documents/java-goof/Dockerfile -t northamerica-northeast2-docker.pkg.dev/snyk-cx-se-demo/sperciballi-registry/java-goof:latest
+  displayName: 'Build Image'
+
+- script: 
+     docker push northamerica-northeast2-docker.pkg.dev/snyk-cx-se-demo/sperciballi-registry/java-goof
+  displayName: 'Push Image'
+
 - task: CopyFiles@2
   inputs:
     SourceFolder: '$(BuildStagingDirectory)'
