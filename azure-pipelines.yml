@@ -38,7 +38,7 @@ steps:
     
 - script: |
      cd /Users/stephen/Documents/java-goof/todolist-goof
-     docker build -f ./todolist-goof/Dockerfile -t northamerica-northeast2-docker.pkg.dev/snyk-cx-se-demo/sperciballi-registry/java-goof:latest .
+     docker build -f ./Dockerfile -t northamerica-northeast2-docker.pkg.dev/snyk-cx-se-demo/sperciballi-registry/java-goof:latest .
   displayName: 'Build Image'
 
 - script: 
