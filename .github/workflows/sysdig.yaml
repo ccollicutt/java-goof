@@ -20,8 +20,8 @@ jobs:
     - name: Build and push Docker image
       uses: docker/build-push-action@v2
       with:
-        context: .
-        file: todolist-goof/Dockerfile
+        context: todois-goof
+        #file: todolist-goof/Dockerfile
         # to add it to the local docker instance so that it can be found by
         # the sysdig cli scanner action set load to true
         load: true
